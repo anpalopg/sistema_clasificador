@@ -1,6 +1,6 @@
 # 📘 Sistemas Clasificadores
 
-## 📑 Índice
+##  Índice
 
 - [Descripción del Proyecto](#-descripción-del-proyecto)
 - [Objetivo del Proyecto](#-objetivo-del-proyecto)
@@ -17,7 +17,7 @@
 
 ---
 
-# 📖 Descripción del Proyecto
+# Descripción del Proyecto
 
 **Sistemas Clasificadores** es un proyecto de planificación y gestión orientado al desarrollo de un sistema capaz de organizar y clasificar información mediante una estructura de trabajo organizada.
 
@@ -33,7 +33,7 @@ La planificación del proyecto se realiza mediante herramientas como **WBS, Matr
 
 ---
 
-# 🎯 Objetivo del Proyecto
+#  Objetivo del Proyecto
 
 Planificar y estructurar el desarrollo del proyecto **Sistemas Clasificadores** mediante herramientas de gestión de proyectos que permitan:
 
@@ -45,7 +45,7 @@ Planificar y estructurar el desarrollo del proyecto **Sistemas Clasificadores** 
 
 ---
 
-# 📅 Información General del Proyecto
+#  Información General del Proyecto
 
 | Elemento | Información |
 |--------|--------|
@@ -56,7 +56,7 @@ Planificar y estructurar el desarrollo del proyecto **Sistemas Clasificadores** 
 
 ---
 
-# 👥 Equipo del Proyecto
+#  Equipo del Proyecto
 
 El proyecto es desarrollado por el siguiente equipo:
 
@@ -72,7 +72,7 @@ Cada integrante participa en distintas actividades del proyecto según la **matr
 
 ---
 
-# 🧑‍💼 Gestión del Proyecto
+#  Gestión del Proyecto
 
 La gestión del proyecto se basa en la organización de tareas y responsabilidades para asegurar el cumplimiento de los objetivos.
 
@@ -86,7 +86,7 @@ Las principales actividades de gestión incluyen:
 
 ---
 
-# 🧩 Matriz RACI
+#  Matriz RACI
 
 La **Matriz RACI** permite identificar las responsabilidades dentro del proyecto.
 
@@ -101,7 +101,7 @@ Esta matriz permite mejorar la organización del equipo y evitar confusión en l
 
 ---
 
-# 🏗 Estructura del Proyecto (WBS)
+#  Estructura del Proyecto (WBS)
 
 El proyecto se organiza mediante una **Work Breakdown Structure (WBS)** que divide el trabajo en partes más pequeñas y manejables.
 
@@ -133,7 +133,7 @@ El proyecto se organiza mediante una **Work Breakdown Structure (WBS)** que divi
 
 ---
 
-# 📅 Cronograma del Proyecto
+#  Cronograma del Proyecto
 
 El cronograma permite planificar las actividades del proyecto de acuerdo con el tiempo disponible.
 
@@ -148,7 +148,7 @@ Esto permite tener control sobre el progreso del proyecto.
 
 ---
 
-# 📋 Gestión de Actividades
+#  Gestión de Actividades
 
 Las actividades del proyecto se registran mediante una **lista de tareas**, que permite controlar:
 
@@ -167,7 +167,7 @@ Estados posibles de las actividades:
 
 ---
 
-# 💰 Presupuesto del Proyecto
+#  Presupuesto del Proyecto
 
 El presupuesto del proyecto permite estimar los recursos necesarios para su desarrollo.
 
@@ -181,7 +181,7 @@ El presupuesto permite llevar un control financiero del proyecto.
 
 ---
 
-# 🛠 Herramientas Utilizadas
+#  Herramientas Utilizadas
 
 Las herramientas utilizadas para la planificación del proyecto incluyen:
 
@@ -192,7 +192,7 @@ Las herramientas utilizadas para la planificación del proyecto incluyen:
 
 ---
 
-# 📌 Resultados Esperados
+#  Resultados Esperados
 
 Al finalizar el proyecto se espera obtener:
 
