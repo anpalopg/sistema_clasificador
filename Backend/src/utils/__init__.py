@@ -1,0 +1,1 @@
+#aca va a estar el crud general de los textos 
