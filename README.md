@@ -1,4 +1,4 @@
-# 📘 Sistemas Clasificadores
+# 📘 Smart Knowledge Yield
 
 ## 📑 Índice
 
