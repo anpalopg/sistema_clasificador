@@ -1,20 +1,23 @@
-import {configureStore,type Action,type ThunkAction} from "@reduxjs/toolkit"
-import chatReduce from "./Slices/homeSlices"
-
+import { configureStore, type Action, type ThunkAction } from "@reduxjs/toolkit";
+import chatSessionReducer from './Slices/homeSlices';
 
 
 const store = configureStore({
-    reducer:{
-        chatSesion:chatSesionReducer,
+    reducer: {
+        chatSessions: chatSessionReducer,
     }
 })
+
+// Infer the type of `store`
 export type AppStore = typeof store
-export  type RootState = ReturnType <AppStore['getState']>
-export type AppDispatch = AppStore ['dispatch']
-export type AppThunk <ThunkReturnType = void > =ThunkAction<
-ThunkReturnType,
-RootState,
-unknown,
-Action
+export type RootState = ReturnType<AppStore['getState']>
+// Infer the `AppDispatch` type from the store itself
+export type AppDispatch = AppStore['dispatch']
+// Define a reusable type describing thunk functions
+export type AppThunk<ThunkReturnType = void> = ThunkAction<
+  ThunkReturnType,
+  RootState,
+  unknown,
+  Action
 >
 export default store;
