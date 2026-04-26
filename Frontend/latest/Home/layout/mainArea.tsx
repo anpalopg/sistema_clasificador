@@ -40,7 +40,7 @@ const items: MenuItem[] = [
     getItem('SKY user', '4'),
     getItem('SKY guest', '5'),
   ]),
-  getItem('Files', '9', <FileOutlined />),
+  getItem('Information', '9', <FileOutlined />),
 ];
 
 const App: React.FC = () => {

@@ -1,8 +1,8 @@
 import httpx
 from httpx import AsyncClient
 
-from config import HTTPX_CLIET_TIMEOUT
+from src.utils.config import HTTPX_CLIENT_TIMEOUT
 
 
 def get_httpx_client() -> AsyncClient:
-    return httpx.AsyncClient(timeout=HTTPX_CLIET_TIMEOUT)
+    return httpx.AsyncClient(timeout=HTTPX_CLIENT_TIMEOUT)
