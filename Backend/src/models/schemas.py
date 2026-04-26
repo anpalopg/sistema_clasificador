@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 
 class ChatMessage(BaseModel):
@@ -37,4 +37,24 @@ class ChatRequest(BaseModel):
 class SummaryResponse(BaseModel):
 	id: str
 	summary: str
+
+
+class ChatSessionCreate(BaseModel):
+	name: str = Field(default="Nueva sesión de chat", min_length=1)
+
+
+class ChatSessionMessageRequest(BaseModel):
+	chat_session_id: str = Field(..., min_length=1)
+	message: str = Field(..., min_length=1)
+	domain: Optional[str] = None
+
+
+class ChatSessionResponse(BaseModel):
+	id: str = Field(alias="_id")
+	name: str
+	created_at: datetime
+	updated_at: datetime
+	messages: list[ChatMessage] = Field(default_factory=list)
+
+	model_config = ConfigDict(populate_by_name=True)
 

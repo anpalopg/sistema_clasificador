@@ -26,7 +26,7 @@ COPY ./src /app/src
 ENV PATH="/app/.venv/bin:$PATH"
 
 # Expose port
-EXPOSE 8080
+EXPOSE 8000
 
 # Command to run the application
 CMD ["python", "src/main.py"]

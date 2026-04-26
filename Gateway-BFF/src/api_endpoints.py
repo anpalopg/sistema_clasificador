@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Request, Response, Depends
 
 from backend_service import BackendService
-from dependencies import get_backend_service
+from dependecies import get_backend_service
 
 
 

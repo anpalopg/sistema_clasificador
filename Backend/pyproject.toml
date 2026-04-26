@@ -21,4 +21,5 @@ dependencies = [
     "pymongo>=4.16.0",
     "python-dotenv>=1.2.2",
     "uvicorn>=0.43.0",
+    "langchain-ollama>=1.1.0",
 ]

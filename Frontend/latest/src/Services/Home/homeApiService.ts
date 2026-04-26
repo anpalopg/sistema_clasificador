@@ -1,14 +1,4 @@
-// ------------------------------------------------------
-// Nombre del archivo: chatServiceApi.ts
-// Descripción: Servicio que encapsula las llamadas HTTP a la API de chat.
-// Incluye operaciones CRUD sobre sesiones y envío de mensajes.
-// ------------------------------------------------------
 
-/*
-  Importaciones
-  - axios: cliente HTTP para realizar peticiones.
-  - Tipos: ChatSession, ChatMessage y respuestas tipadas de la API.
-*/
 
 import axios from 'axios';
 import type { ChatSessionDeleted, ChatSession, ChatSessionApiResponse, ChatSessionUpdate, ChatSessionUpdateResponse, ChatSessionUpdateApiResponse } from './Interfaces';
@@ -23,11 +13,6 @@ const chatServiceApi = axios.create({
 })
 
 
-/*
-  Función: listChatSessions
-  - Obtiene todas las sesiones de chat desde la API.
-  - Mapea la respuesta para normalizar nombres de campos.
-*/
 
 export const listChatSessions = async (): Promise<ChatSession[]> => {
   const response = await chatServiceApi.get<ChatSessionApiResponse[]>("/list_chat_sessions")
@@ -53,11 +38,6 @@ export const listChatSessions = async (): Promise<ChatSession[]> => {
 }
 
 
-/*
-  Función: createChatSession
-  - Crea una nueva sesión de chat en la API.
-  - Devuelve la sesión creada con sus datos normalizados.
-*/
 
 export const createChatSession = async (): Promise<ChatSession> => {
   const result = await chatServiceApi.post<ChatSessionApiResponse>("/create_chat_session",{})

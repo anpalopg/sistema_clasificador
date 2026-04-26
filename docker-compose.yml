@@ -1,0 +1,46 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: sistema_clasificador_mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    container_name: sistema_clasificador_backend
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    environment:
+      APP_HOST: 0.0.0.0
+      APP_PORT: 8000
+      APP_RELOAD: "false"
+      HTTPX_CLIENT_TIMEOUT: 30
+      APP_MONGO_URL: mongodb://mongo:27017
+    ports:
+      - "8000:8000"
+
+  gateway:
+    build:
+      context: ./Gateway-BFF
+      dockerfile: Dockerfile
+    container_name: sistema_clasificador_gateway
+    restart: unless-stopped
+    depends_on:
+      - backend
+    environment:
+      APP_HOST: 0.0.0.0
+      APP_PORT: 8080
+      APP_RELOAD: "false"
+      HTTP_TIMEOUT: 60
+      GENERAL_CONTROLLER_URL: http://backend:8000
+    ports:
+      - "8080:8080"
+
+volumes:
+  mongo_data:
