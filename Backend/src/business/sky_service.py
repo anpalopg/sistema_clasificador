@@ -1,42 +1,45 @@
-# Lógica de negocio para el resumen de textos. Aquí se implementan las funciones que utilizan los modelos de lenguaje para generar resúmenes a partir de los textos almacenados en la base de datos.
+from fastapi import HTTPException, status
 
+from src.data.database import SkyRepository
+from src.models.schemas import ChatRequest, TextCreate, TextResponse, TextUpdate
 
-
-from fastapi import HTTPException,status
-from typing import Optional
-
-from src.data.database import Database
-from src.models.llm import LLM
-from src.models.schemas import SummaryRequest, SummaryResponse
-from src.models.bertopic_model import BERTopicModel
 
 class SkyService:
-    def upload_file(self):
-        return TextRepository.create(...)
+    def __init__(self, repository: SkyRepository) -> None:
+        self.repository = repository
 
-    def list_sky_sessions(self):
-        return TextRepository.list_all()
+    def upload_file(self, payload: TextCreate) -> TextResponse:
+        return self.repository.upload_file(payload)
 
-    def get_sky_session_by_id(self, id: str):
-        return TextRepository.get(id)
+    def list_sky_sessions(self) -> list[TextResponse]:
+        return self.repository.list_sky_sessions()
 
-    def update_sky_session_by_id(self, id: str):
-        return TextRepository.update(id, ...)
+    def get_sky_session_by_id(self, session_id: str) -> TextResponse:
+        session = self.repository.get_sky_session_by_id(session_id)
+        if not session:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Session not found")
+        return session
 
-    def delete_sky_session_by_id(self, id: str):
-        return TextRepository.delete(id)
+    def update_sky_session_by_id(self, session_id: str, payload: TextUpdate) -> TextResponse:
+        session = self.repository.update_sky_session_by_id(session_id, payload)
+        if not session:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Session not found")
+        return session
 
-    def summaries_file(self):
-        return TopicModel.generate_summary(...)
+    def delete_sky_session_by_id(self, session_id: str) -> None:
+        deleted = self.repository.delete_sky_session_by_id(session_id)
+        if not deleted:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Session not found")
 
-    def summaries_sky_session_by_id(self, id: str):
-        return TextRepository.get_summary(id)
+    def summaries_file(self, session_id: str) -> TextResponse:
+        session = self.repository.generate_summary(session_id)
+        if not session:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Session not found")
+        return session
 
-    def chat_file_session(self):
-        return LLMClient.chat(...)
+    def chat_file_session(self, session_id: str, payload: ChatRequest) -> TextResponse:
+        session = self.repository.start_chat_session(session_id, payload.question)
+        if not session:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Session not found")
+        return session
 
-    def summaries_sky_chat_session_by_id(self, id: str):
-        return TextRepository.get_chat_history(id)
-
-def get_sky_service():
-    return SkyService()

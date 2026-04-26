@@ -1,0 +1,12 @@
+[project]
+name = "bff"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi[standard]>=0.124.0",
+    "httpx>=0.28.1",
+    "python-dotenv>=1.2.1",
+    "uvicorn>=0.38.0",
+]
