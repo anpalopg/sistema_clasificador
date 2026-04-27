@@ -214,3 +214,7 @@ Al finalizar el proyecto se espera obtener:
 - Documentación completa del proyecto
 - Organización estructurada del desarrollo
 - Control eficiente de recursos y tiempos
+
+
+esto corre tod el back y el bff toca el front normi
+docker compose up --build levanta Mongo, backend y gateway
